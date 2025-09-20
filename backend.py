@@ -2,6 +2,9 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Literal, Optional
+
+from models.gemini_event import tag_event_gemini
+from models.gemini_time import tag_timex3_gemini
 from models.our_model import time_model, event_model
 import subprocess
 
@@ -39,7 +42,7 @@ def run_time_model(model: str, text: str) -> str:
     if model == "GPT":
         return ""  # placeholder
     elif model == "Gemini":
-        return ""  # placeholder
+        return tag_timex3_gemini(text)  # placeholder
     elif model == "Our-Model":
         return ""
         # return time_model.extract_time(text)
@@ -54,7 +57,7 @@ def run_event_model(model: str, text: str) -> str:
     if model == "GPT":
         return ""  # placeholder
     elif model == "Gemini":
-        return ""  # placeholder
+        return tag_event_gemini(text)
     elif model == "Our-Model":
         return event_model.event_pipeline(text)
     else:

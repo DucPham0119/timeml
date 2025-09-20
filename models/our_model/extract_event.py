@@ -49,7 +49,7 @@ def extract_events_from_conllu(conllu_str: str):
         if t["id"] in root_tokens:
             events.append(t["token"])
             used_ids.add(t["id"])
-        elif t["pos"] == "VERB":
+        elif t["pos"] == "VERB" and t["deprel"] != "aux":
             events.append(t["token"])
             used_ids.add(t["id"])
 
