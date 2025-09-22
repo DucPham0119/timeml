@@ -5,6 +5,8 @@ from typing import Literal, Optional
 
 from models.gemini_event import tag_event_gemini
 from models.gemini_time import tag_timex3_gemini
+from models.gpt_event import tag_event
+from models.gpt_time import tag_timex3
 from models.our_model import time_model, event_model
 import subprocess
 
@@ -40,7 +42,7 @@ def run_heideltime(text: str) -> str:
 
 def run_time_model(model: str, text: str) -> str:
     if model == "GPT":
-        return ""  # placeholder
+        return tag_timex3(text)  # placeholder
     elif model == "Gemini":
         return tag_timex3_gemini(text)  # placeholder
     elif model == "Our-Model":
@@ -55,7 +57,7 @@ def run_time_model(model: str, text: str) -> str:
 
 def run_event_model(model: str, text: str) -> str:
     if model == "GPT":
-        return ""  # placeholder
+        return tag_event(text)  # placeholder
     elif model == "Gemini":
         return tag_event_gemini(text)
     elif model == "Our-Model":
