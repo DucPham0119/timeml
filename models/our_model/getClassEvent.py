@@ -18,8 +18,8 @@ def main(list_event, sentence):
     word_vectors = get_embed_all_word(flat_events)
 
     # load lại centroids và labels
-    class_centroids = np.load("D:\\De_tai_TN\\Code\\models\\our_model\\class_centroids.npy")
-    with open("D:\\De_tai_TN\\Code\\models\\our_model\\class_labels.txt", "r", encoding="utf-8") as f:
+    class_centroids = np.load("/home/ducpt/Code/models/our_model/class_centroids.npy")
+    with open("/home/ducpt/Code/models/our_model/class_labels.txt", "r", encoding="utf-8") as f:
         class_labels = [line.strip() for line in f]
 
     # chuẩn hóa centroids trước

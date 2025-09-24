@@ -39,7 +39,3 @@ def tag_event(sentence: str) -> str:
     return tagged_sentence
 
 
-# Ví dụ sử dụng
-sentence = "Ngày mai tôi sẽ đi Hà Nội."
-result = tag_event(sentence)
-print(result)

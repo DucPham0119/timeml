@@ -1,8 +1,13 @@
 # import google.generativeai as genai
-
+import os
 
 import google.generativeai as genai
-genai.configure(api_key="AIzaSyDfgc7Ukz_8aLJA7I3M2nJWLTCkXBIcbDk")
+from dotenv import load_dotenv
+
+load_dotenv()
+api_key = os.getenv("GEMINI_KEY")
+
+genai.configure(api_key=api_key)
 
 def tag_event_gemini(sentence: str) -> str:
     """

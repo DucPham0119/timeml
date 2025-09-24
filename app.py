@@ -132,7 +132,7 @@ if submitted:
 
         try:
             # Gọi backend
-            response = requests.post("http://localhost:8000/extract", json=payload)
+            response = requests.post("http://118.70.176.240:8050/extract", json=payload)
             response.raise_for_status()
 
             data = response.json()

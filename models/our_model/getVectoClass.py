@@ -43,11 +43,11 @@ class_name = {
                    "bùng cháy", "bốc cháy", "tràn lan", "lan rộng", "rộ lên", "tái bùng phát", "trỗi dậy mạnh mẽ"]}
 
 # tính vector trung bình cho từng class
-class_labels = list(class_name.keys())
-class_centroids = get_embed_average(list(class_name.values()))
-
-# lưu ra file
-np.save("class_centroids.npy", class_centroids)
-with open("class_labels.txt", "w", encoding="utf-8") as f:
-    for label in class_labels:
-        f.write(label + "\n")
+# class_labels = list(class_name.keys())
+# class_centroids = get_embed_average(list(class_name.values()))
+#
+# # lưu ra file
+# np.save("class_centroids.npy", class_centroids)
+# with open("class_labels.txt", "w", encoding="utf-8") as f:
+#     for label in class_labels:
+#         f.write(label + "\n")

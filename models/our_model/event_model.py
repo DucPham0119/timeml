@@ -3,7 +3,7 @@ from models.our_model.ViNeuroNLP.application.vidp import ViDP
 from models.our_model.extract_event import extract_events_from_conllu
 from models.our_model.getClassEvent import main
 
-absolute_path = "D:\\De_tai_TN\\Code\\models\\our_model\\ViNeuroNLP"
+absolute_path = "/home/ducpt/Code/models/our_model/ViNeuroNLP"
 
 
 def run_dp_with_vineuronlp(sentence: str):
@@ -21,7 +21,7 @@ def event_pipeline(sentence: str):
     return main(event_candidates, sentence)
 
 
-if __name__ == "__main__":
-    sent = "Hôm nay tôi đi học vào thứ 2 và khóc"
-    result = event_pipeline(sent)
-    print(result)
+# if __name__ == "__main__":
+#     sent = "Hôm nay tôi đi học vào thứ 2 và khóc"
+#     result = event_pipeline(sent)
+#     print(result)

@@ -38,8 +38,3 @@ def tag_timex3(sentence: str) -> str:
     tagged_sentence = response.choices[0].message["content"].strip()
     return tagged_sentence
 
-
-# Ví dụ sử dụng
-sentence = "Ngày mai tôi sẽ đi Hà Nội."
-result = tag_timex3(sentence)
-print(result)

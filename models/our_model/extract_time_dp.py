@@ -1,6 +1,6 @@
 from models.our_model.ViNeuroNLP.application.vidp import ViDP
 
-absolute_path = "D:\\De_tai_TN\\Code\\models\\our_model\\ViNeuroNLP"
+absolute_path = "/home/ducpt/Code/models/our_model/ViNeuroNLP"
 
 
 def run_dp_with_vineuronlp(sentence: str):
@@ -61,6 +61,6 @@ def extract_time_from_conllu(dp_conllu_str: str):
     return time_candidates
 
 
-conllu = run_dp_with_vineuronlp("Ngày mai (10/5/2015) tôi sẽ đi học sau khi tôi thức dậy")
-print(conllu)
-print(extract_time_from_conllu(conllu))
+# conllu = run_dp_with_vineuronlp("Ngày mai (10/5/2015) tôi sẽ đi học sau khi tôi thức dậy")
+# print(conllu)
+# print(extract_time_from_conllu(conllu))
