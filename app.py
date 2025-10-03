@@ -3,7 +3,7 @@ import requests
 import base64
 from PIL import Image
 from io import BytesIO
-
+from backend2 import process_request
 # Logo giữa
 logo = Image.open("./image/Logo-HUS.png")
 buffered = BytesIO()
@@ -126,21 +126,28 @@ if submitted:
     else:
         payload = {
             "text": text,
-            "time_model": time_model if time_model != "" else None,
-            "event_model": event_model if event_model != "" else None
+            "model_time": time_model if time_model != "" else None,
+            "model_event": event_model if event_model != "" else None
         }
 
-        try:
-            # Gọi backend
-            response = requests.post("http://118.70.176.240:8050/extract", json=payload)
-            response.raise_for_status()
+        # print(payload)
 
-            data = response.json()
+        try:
+            # Gọi backen
+            
+            # response = requests.post("http://127.0.0.1:8000/extract", json=payload)
+            respone = process_request(**payload)
+            print('respone - done')
+            # response.raise_for_status()
+
+            # data = response.json()
+            data = respone
+            print('data-1')
 
             st.subheader("Kết quả:")
 
             # Xử lý hiển thị theo số lượng kết quả
-            if data.get("time") and data.get("event"):
+            if data.get("time") or data.get("event"):
                 # Có cả hai kết quả: chia làm 2 cột
                 col_time, col_event = st.columns(2)
                 with col_time:
