@@ -1,5 +1,3 @@
 # Run code
-streamlit run app.py
+python3 -m streamlit run app.py --server.address=0.0.0.0 --server.port=8502
 
-# Run Backend
-uvicorn backend:app --reload --port 8000
