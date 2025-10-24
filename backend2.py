@@ -1,5 +1,5 @@
 # backend.py
-from fastapi import FastAPI, HTTPException
+# from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Literal, Optional
 
@@ -16,7 +16,7 @@ sys.path.append('/home/ducpt/heildeltime')
 from models.heideltime1.heideltime1 import heideltime_process1
 from models.heideltime2.heideltime2 import heideltime_process2
 
-app = FastAPI(title="Temporal & Event Extraction API")
+# app = FastAPI(title="Temporal & Event Extraction API")
 
 
 # -----------------------------
@@ -96,3 +96,4 @@ def process_request(text: str, model_time: Optional[str], model_event: Optional[
 #         return result
 #     except Exception as e:
 #         raise HTTPException(status_code=500, detail=str(e))
+
