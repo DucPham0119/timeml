@@ -1,6 +1,6 @@
 # backend.py
 # from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+# from pydantic import BaseModel
 from typing import Literal, Optional
 
 from models.gemini_event import tag_event_gemini
@@ -22,10 +22,10 @@ from models.heideltime2.heideltime2 import heideltime_process2
 # -----------------------------
 # Request model
 # -----------------------------
-class ExtractionRequest(BaseModel):
-    text: str
-    time_model: Optional[Literal["", "GPT", "Gemini", "Heidel-Time", "Our-Model"]]
-    event_model: Optional[Literal["", "GPT", "Gemini", "Our-Model"]]
+# class ExtractionRequest(BaseModel):
+#     text: str
+#     time_model: Optional[Literal["", "GPT", "Gemini", "Heidel-Time", "Our-Model"]]
+#     event_model: Optional[Literal["", "GPT", "Gemini", "Our-Model"]]
 
 
 # -----------------------------
@@ -96,4 +96,5 @@ def process_request(text: str, model_time: Optional[str], model_event: Optional[
 #         return result
 #     except Exception as e:
 #         raise HTTPException(status_code=500, detail=str(e))
+
 
